@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px; /* Увеличил ширину контейнера для двух столбцов */
+  padding: 50px;
+  border: 1px solid #dedede;
+  margin: 50px auto;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.column {
+  width: 48%; /* 48% для двух столбцов с небольшим отступом между ними */
+}
+
+.field {
+  margin-bottom: 20px !important;
+}
+
+.title {
+  text-align: center !important;
+  font-weight: bold !important;
+  margin-bottom: 30px !important;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
