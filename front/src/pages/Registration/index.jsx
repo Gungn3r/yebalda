@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 
 import styles from './Login.module.scss';
-import { fetchAuth, fetchRegister, selectIsAuth } from '../../redux/slices/auth';
+import { fetchRegister, selectIsAuth } from '../../redux/slices/auth';
 
 export const Registration = () => {
   const isAuth = useSelector(selectIsAuth);

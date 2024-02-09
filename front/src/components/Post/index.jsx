@@ -12,6 +12,7 @@ import { fetchRemovePost } from '../../redux/slices/posts.js';
 
 export const Post = ({
   id,
+  action,
   productName,
   createdAt,
   user,
@@ -66,6 +67,9 @@ export const Post = ({
           </h2>
           {isFullPost && (
             <div>
+              <p>
+                <strong>Тип сделки:</strong> {action}
+              </p>
               <p>
                 <strong>Объем товара:</strong> {volume} тонн
               </p>

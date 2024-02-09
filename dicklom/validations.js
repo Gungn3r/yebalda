@@ -13,6 +13,7 @@ export const loginValidation = [
   ];
 
   export const postCreateValidation = [
+    body('action', 'Укажите тип сделки').isIn(['buy', 'sell']),
     body('productName', 'Введите наименование товара').isLength({ min: 1 }).isString(),
     body('volume', 'Введите объём товара в тоннах').isNumeric(),
     body('priceWithVAT', 'Введите стоимость за 1 тонну с учётом НДС').isNumeric(),

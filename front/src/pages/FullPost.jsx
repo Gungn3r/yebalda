@@ -31,6 +31,7 @@ export const FullPost = () => {
         <>
             <Post
                 id={data._id}
+                action={data.action}
                 productName={data.productName}
                 user={data.user}
                 createdAt={data.createdAt}

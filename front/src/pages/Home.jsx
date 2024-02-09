@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Grid from '@mui/material/Grid';
+
+import { Post } from '../components/Post'
 import { fetchPosts } from '../redux/slices/posts.js';
 
 export const Home = () => {
@@ -26,15 +28,25 @@ export const Home = () => {
 			</Tabs>
 			<Grid container spacing={4}>
 				<Grid xs={12} item>
-					{posts.items.map((obj, index) => {
-                        console.log('obj', obj);
-						return (
-							<div key={index}>
-								<h2>{obj.productName}</h2>
-								<p>Posted by: {obj.user.fullName}</p>
-							</div>
-						);
-					})}
+					{( isPostsLoading ? [...Array(5)] : posts.items).map((obj, index) =>
+                        isPostsLoading ?  (
+                            <Post key={index} isLoading={true} />
+                        ) : (
+                            <Post
+                                id={obj._id}
+                                user={obj.user} 
+                                productName={obj.productName}
+                                volume={obj.volume}
+                                priceWithVAT={obj.priceWithVAT}
+                                deliveryBasis={obj.deliveryBasis}
+                                deliveryPlace={obj.deliveryPlace}
+                                counterpartyOption={obj.counterpartyOption}
+                                binIin={obj.binIin}
+                                createdAt={obj.createdAt}
+                            />
+                        )
+
+                    )}
 				</Grid>
 			</Grid>
 		</>

@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 
 const postSchema = new mongoose.Schema(
   {
+    action:{
+      type: String,
+      required: true,
+    },
     productName: {
       type: String,
       required: true,

@@ -30,6 +30,7 @@ export const getOne = async (req, res) => {
 export const create = async (req, res) => {
   try {
     const {
+      action,
       productName,
       volume,
       priceWithVAT,
@@ -41,6 +42,7 @@ export const create = async (req, res) => {
     } = req.body;
 
     const newPost = new Post({
+      action,
       productName,
       volume,
       priceWithVAT,
@@ -66,6 +68,7 @@ export const update = async (req, res) => {
     const postId = req.params.id;
 
     const {
+      action,
       productName,
       volume,
       priceWithVAT,
@@ -79,6 +82,7 @@ export const update = async (req, res) => {
     await Post.findByIdAndUpdate(
       postId,
       {
+        action,
         productName,
         volume,
         priceWithVAT,
