@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import styles from './AddPost.module.scss';
-import axios from 'axios';
+import axios from '../../axios';
 
 export const AddPost = () => {
   const [action, setAction] = useState('buy');
@@ -31,7 +31,7 @@ export const AddPost = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('/api/create-post', {
+      const response = await axios.post('/posts', {
         action,
         productName,
         volume,

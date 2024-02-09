@@ -27,6 +27,7 @@ export const Home = () => {
 			<Grid container spacing={4}>
 				<Grid xs={12} item>
 					{posts.items.map((obj, index) => {
+                        console.log('obj', obj);
 						return (
 							<div key={index}>
 								<h2>{obj.productName}</h2>
